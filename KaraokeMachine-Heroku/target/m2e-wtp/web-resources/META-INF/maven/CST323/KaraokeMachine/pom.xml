@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>CST323</groupId>
+	<artifactId>KaraokeMachine</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>KaraokeMachine</name>
+	<url>http://maven.apache.org</url>
+
+	
+	<properties>
+		<java.version>1.8</java.version>
+		<spring.version>3.1.0.RELEASE</spring.version>
+		<cglib.version>2.2.2</cglib.version>
+		<warname>KaraokeMachine</warname> <!-- Define War file name -->
+	</properties>
+
+	<dependencies>
+		<!-- SQL connecter-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.20</version>
+		</dependency>
+		
+		<!-- Spring core & mvc -->
+		<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>4.3.9.RELEASE</version>
+  	</dependency>
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-webmvc</artifactId>
+    		<version>4.3.9.RELEASE</version>
+	</dependency>
+	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-aop</artifactId>
+  		<version>4.3.9.RELEASE</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-web</artifactId>
+  		<version>4.3.9.RELEASE</version>
+  	</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>4.3.9.RELEASE</version>
+    </dependency>
+		
+		<!-- Aspectj will allow this particular project to use its applicationConfiguration.xml file for its beans-->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>1.9.3</version>
+		</dependency>
+		
+		<!-- JDBC help with spring beans; this specific version allows the jdbc code to run -->
+		<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-jdbc</artifactId>
+  		<version>4.3.9.RELEASE</version>
+  	</dependency>
+  	
+
+		<!-- CGLib for @Configuration -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>${cglib.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+
+
+		<!-- Servlet Spec -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- Bootstrap -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		    <version>3.3.6</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap-datepicker</artifactId>
+		    <version>1.0.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery</artifactId>
+		    <version>1.9.1</version>
+		</dependency>
+		
+		<!-- Logging -->
+		<dependency>
+	  		<groupId>org.slf4j</groupId>
+	  		<artifactId>slf4j-api</artifactId>
+	  		<version>1.7.5</version>
+	  	</dependency>
+	  	<dependency>
+	        <groupId>org.slf4j</groupId>
+	        <artifactId>slf4j-log4j12</artifactId>
+	        <version>1.7.12</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-javadoc-plugin</artifactId>
+	        <version>2.10.3</version>
+	        <scope>provided</scope>
+			<exclusions>
+			    <exclusion>
+			        <groupId>org.slf4j</groupId>
+			        <artifactId>slf4j-nop</artifactId>
+			    </exclusion>
+			    <exclusion>
+			        <groupId>org.slf4j</groupId>
+			        <artifactId>slf4j-jdk14</artifactId>
+			    </exclusion>
+			</exclusions>  
+	    </dependency>
+	    <dependency>
+	    		<groupId>org.apache.commons</groupId>
+	    		<artifactId>commons-dbcp2</artifactId>
+	    		<version>2.1.1</version>
+		</dependency>
+	 	<dependency>
+	    		<groupId>org.apache.commons</groupId>
+	    		<artifactId>commons-pool2</artifactId>
+	    		<version>2.4.2</version>
+		</dependency>
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>springsource-milestones</id>
+			<name>SpringSource Milestones Proxy</name>
+			<url>https://oss.sonatype.org/content/repositories/springsource-milestones</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<finalName>KaraokeMachine</finalName>
+		<plugins>
+			<!-- Apache Maven Compiler Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			
+			<!-- Apache Maven War Plugin -->
+			 <plugin>
+		        <artifactId>maven-war-plugin</artifactId>
+		        <version>3.0.0</version>
+		 	    <configuration>
+			    	<warSourceDirectory>${project.basedir}/target/${warname}</warSourceDirectory>
+		 	    </configuration>
+		      </plugin>
+		      
+			<!-- Maven Heroku Deployment Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.github.jsimone</groupId>
+									<artifactId>webapp-runner</artifactId>
+									<version>9.0.27.0</version>
+									<destFileName>webapp-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>log4j.xml</include>
+				</includes>
+				<targetPath>${project.basedir}/target/classes</targetPath>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>config.properties</include>
+				</includes>
+				<targetPath>${project.basedir}/target/classes</targetPath>
+			</resource>
+			<resource>
+                 <directory>src/main/webapp</directory>
+                <targetPath>${project.basedir}/target/${warname}</targetPath>
+                 <includes>
+                    <include>**/WEB-INF/**</include>
+                  </includes>
+            </resource>
+		</resources>
+	</build>
+</project>
