@@ -40,7 +40,7 @@
                         <hr class="divider my-4" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">Sing to your heart's desire!</p>
+                        <p class="text-white-75 font-weight-light mb-5">Sing to your heart's desire! :)</p>
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="songList">View Song List</a>
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="requestASong">Request a Song</a>
                         
